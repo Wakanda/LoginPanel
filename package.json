@@ -14,7 +14,7 @@
     "keywords": ["wakanda", "widget"],
     "engines": {"wakanda": ">= 11"},
     "license": "MIT",
-    "externalWidgets": [ ],
+    "externalWidgets": [ 'LoginButton', 'TextInput', 'Image' ],
     "loadDependencies": [
     	{"package": "LoginButton"},
     	{"package": "TextInput"},
