@@ -64,6 +64,22 @@ WAF.define('LoginPanel', ['waf-core/widget', 'Image', 'TextInput', 'LoginButton'
 		    $(this.node).on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function (e) {
         	    $(this).removeClass("login-wrong");
         	});
+        	
+        	loginButton.subscribe('login', function() {
+        		loginInput.value('');
+        		passwordInput.value('');
+        		loginInput.hide();
+        		passwordInput.hide();
+        	});
+        	loginButton.subscribe('logout', function() {
+        		loginInput.show();
+        		passwordInput.show();
+        	});
+        	
+        	var subscriber = this.subscribe('submit', function() {
+        		loginButton.click();
+        	});
+        	subscriber.options.allowPropagation = true;
 		}
     });
 	
